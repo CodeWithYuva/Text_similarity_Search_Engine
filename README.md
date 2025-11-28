@@ -6,10 +6,6 @@
 
 ## 📌 Internship Task Requirements
 
-This project was built as part of an internship assignment with the following mandatory requirements:
-
-### ✅ **Task Requirements Given by Company**
-
 * Build a **Text Similarity Search Engine**
 * Take user input from frontend
 * Compare the user’s text with a dataset (100+ lines)
@@ -17,7 +13,7 @@ This project was built as part of an internship assignment with the following ma
 * Use **Cosine Similarity** to calculate similarity scores
 * Return **Top 3 most similar sentences** from the dataset
 * Build a simple **frontend UI** for input + results
-* Build backend using **Flask / Node.js** (Flask chosen)
+* Build backend using **Flask**
 * Dataset provided in `.txt` or `.json` format
 * **NO external AI APIs** (OpenAI / Gemini / Claude not allowed)
 
@@ -28,87 +24,7 @@ This project was built as part of an internship assignment with the following ma
 * **Flask (Python)** for backend
 * **HTML + CSS + JavaScript** for frontend
 * **Scikit-learn** for TF-IDF and cosine similarity
-* **NLTK (optional earlier)** — later removed as per final requirement
-* **LocalStorage** for storing search history
-
 ---
-
-## 📌 Features Implemented (Beyond the Basic Requirement)
-
-I enhanced the project significantly to make it more professional and interview‑ready.
-
-### ⭐ **1. Modular Architecture (Professional Code Structure)**
-
-Backend logic was divided into reusable modules:
-
-* `tfidf_engine.py` → Handles TF-IDF vectorization
-* `similarity_engine.py` → Handles Cosine similarity
-* `app.py` → Flask routes + integration
-
-This makes the project scalable and clean.
-
----
-
-### ⭐ **2. Highlighting Matching Words (Google-like UI)**
-
-Search results highlight matched words using `<mark>` tag so users can visually see relevance.
-
-Example:
-
-```
-Query: cricket match
-Result: India won the <mark>cricket</mark> <mark>match</mark> yesterday.
-```
-
----
-
-### ⭐ **3. Dataset Upload Feature**
-
-Users can upload **their own custom dataset (.txt file)**.
-
-* Automatically rebuilds TF-IDF model
-* Makes the search engine usable for any domain (sports, news, finance, etc.)
-
----
-
-### ⭐ **4. Search History Panel (LocalStorage)**
-
-Every search is saved locally and shown in a history sidebar.
-
-* Helps test functionality quickly
-* Improves UI/UX
-
----
-
-### ⭐ **5. Clean, Responsive Frontend UI**
-
-Includes:
-
-* Input box
-* Search button
-* Dataset upload section
-* Search results
-* History panel
-
-Simple, intuitive, and user-friendly.
-
----
-
-## 📌 Features Removed (Based on Your Requirement)
-
-Initially, the project had *synonym expansion* using WordNet.
-You requested removal of **Expanded Query** feature.
-
-So the final version uses:
-✔ Pure TF‑IDF
-✔ Pure cosine similarity
-❌ No synonyms
-❌ No query expansion
-
-This returns only exact TF-IDF based similarity.
-
----
-
 ## 📌 How It Works (Simple Explanation)
 
 1. User enters a sentence in the frontend.
@@ -152,8 +68,7 @@ Run once:
 python -m nltk.downloader wordnet
 python -m nltk.downloader omw-1.4
 ```
-
-*(Only if synonyms were needed earlier; now optional.)*
+(line no 12 and 13 you can uncomment in first time execution)
 
 ---
 
@@ -172,32 +87,45 @@ http://127.0.0.1:5000/
 ```
 
 ---
+#### Features ####
 
-## 📌 Why This Project Is Impressive for an Internship
+### ⭐ **3. Dataset Upload Feature**
 
-When explaining to interviewers, say:
+Users can upload **their own custom dataset (.txt file)**.
 
-> “I didn’t just complete the basic requirement.
-> I added modular architecture, dataset upload, search history, and highlighted results.
-> The project is scalable, easy to maintain, and built with clean separation of logic.”
-
-This shows:
-
-* Strong Python & Flask skills
-* Understanding of text vectorization
-* Good UI/UX sense
-* Code organization & real‑world structure
-* Ability to go beyond requirements
+* Automatically rebuilds TF-IDF model
+* Makes the search engine usable for any domain (sports, news, finance, etc.)
 
 ---
 
-## 📌 Want me to add anything else?
 
-I can also include:
+### 🔍 Synonym Expansion (Internal Semantic Boost)
 
-* UML diagram
-* Flowchart
-* Architecture diagram
-* Deployment (Render / PythonAnywhere)
+To make the search engine more intelligent, the backend uses NLTK WordNet to expand the user’s query with relevant synonyms. This helps the model find more meaningful matches even if the exact words do not appear in the dataset.
 
-Just tell me!
+✔ Example
+
+User input:
+
+India won the match
+
+
+Expanded internally to include:
+
+win, victory, triumph, succeed, achieve
+match, game, contest
+
+✔ Why this improves accuracy
+
+TF-IDF normally matches exact words only.
+With synonym expansion:
+
+“win” also matches “victory”
+
+“match” also matches “game”
+
+“succeed” also matches “come through”
+
+# This makes the search semantic, not just keyword-based. #
+
+
