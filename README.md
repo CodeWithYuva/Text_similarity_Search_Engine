@@ -1,4 +1,4 @@
-# Text Similarity Search Engine (Flask) — README
+<img width="1917" height="868" alt="image" src="https://github.com/user-attachments/assets/3c12fd1e-837d-42b1-b389-74fe3d3d39cd" /># Text Similarity Search Engine (Flask) — README
 
 ## 📌 Project Title
 
@@ -85,6 +85,10 @@ Open in browser:
 ```
 http://127.0.0.1:5000/
 ```
+<img width="1919" height="945" alt="Screenshot 2025-11-28 184219" src="https://github.com/user-attachments/assets/2107c48e-e179-4a33-9526-6223e5d56a19" />
+<img width="1917" height="868" alt="Screenshot 2025-11-28 184310" src="https://github.com/user-attachments/assets/f8d8ef29-4657-4039-955e-33042843bf25" />
+
+
 
 ---
 #### Features ####
