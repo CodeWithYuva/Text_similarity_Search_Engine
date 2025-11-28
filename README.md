@@ -92,7 +92,7 @@ http://127.0.0.1:5000/
 ---
 # Features #
 
-### ⭐ **3. Dataset Upload Feature**
+### ⭐ ** Dataset Upload Feature**
 
 Users can upload **their own custom dataset (.txt file)**.
 
