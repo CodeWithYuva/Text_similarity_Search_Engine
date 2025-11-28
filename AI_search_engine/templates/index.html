@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Text Similarity Search Engine — Advanced</title>
+  <style>
+    body { font-family: Arial; max-width: 900px; margin: 30px auto; }
+    input[type=text]{ width:100%; padding:10px; font-size:16px }
+    button{ padding:10px 16px; margin-top:8px }
+    .result{ border:1px solid #ccc; padding:8px; margin-top:8px; border-radius:6px }
+    mark { background: yellow; }
+  </style>
+</head>
+<body>
+
+  <h1>AI Text Similarity Search Engine</h1>
+
+  <input id="query" type="text" placeholder="Enter your text">
+  <button id="btn">Search</button>
+
+  <h3>Upload Custom Dataset</h3>
+  <input type="file" id="fileInput">
+
+
+  <h3>Search Results</h3>
+  <div id="results"></div>
+
+  <h3>Search History</h3>
+  <div id="history" style="border:1px solid #ccc; padding:10px;"></div>
+
+  <script src="/static/scripts.js"></script>
+</body>
+</html>
